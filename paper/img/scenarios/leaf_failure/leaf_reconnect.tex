@@ -1,0 +1,22 @@
+\documentclass{standalone} 
+\usepackage{forest}
+
+\begin{document}
+
+\begin{forest}
+for tree={circle,draw,minimum size = 2.5em, l sep=20pt}
+[root 
+    [1, name=one, for tree={s sep = 2.0em}  
+      [3] 
+      [4, name=four, edge label={node[midway,right] {Help!}}, edge=white] 
+    ]
+    [2, name=two, for tree={s sep = 2.0em}
+      [5] 
+      [6]
+  ] 
+]
+\draw[->, dotted] (four) to node[pos=0.5,xshift=2.5mm,yshift=0mm]{A} (one);
+\draw[->, dotted] (four) to node[pos=0.5,xshift=-1.5mm,yshift=1.5mm]{B} (two);
+\end{forest}
+
+\end{document}

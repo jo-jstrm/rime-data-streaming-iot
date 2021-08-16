@@ -1,0 +1,91 @@
+\documentclass{standalone} 
+\usepackage[dvipsnames, fixpdftex]{xcolor}
+\usepackage{forest}
+\usetikzlibrary{calc,shadings}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+% Code from Christian Feuersänger
+% https://tex.stackexchange.com/questions/54794/using-a-pgfplots-style-legend-in-a-plain-old-tikzpicture#54834
+
+% argument #1: any options
+\newenvironment{customlegend}[1][]{%
+    \begingroup
+    % inits/clears the lists (which might be populated from previous
+    % axes):
+    \csname pgfplots@init@cleared@structures\endcsname
+    \pgfplotsset{#1}%
+}{%
+    % draws the legend:
+    \csname pgfplots@createlegend\endcsname
+    \endgroup
+}%
+
+% makes \addlegendimage available (typically only available within an
+% axis environment):
+\def\addlegendimage{\csname pgfplots@addlegendimage\endcsname}
+
+%%--------------------------------
+
+% definition to insert numbers
+\pgfkeys{/pgfplots/number in legend/.style={%
+        /pgfplots/legend image code/.code={%
+            \node at (0.295,-0.0225){#1};
+        },%
+    },
+    /pgfplots/shape in legend/.style 2 args={%
+    /pgfplots/legend image code/.code={%
+        \node[draw,#1,fill=#2,minimum width=3mm] at (0.295,-0.0225){};
+        },%
+    },
+}
+
+\begin{document}
+
+\begin{forest}
+for tree={circle,draw,minimum size = 2.25em, l sep=15pt, s sep=2.0em}
+[0,
+    [1,
+            [$\dots$, draw=none]
+    ]
+    [2, fill=SpringGreen, shape=star
+        [5, minimum size=2em, fill=White, shape=rectangle, for tree={s sep = 2.0em}  
+            [$\dots$, draw=none]
+        ]
+        [6, minimum size=2em, fill=White, shape=rectangle, for tree={s sep = 2.0em}
+            [$\dots$, draw=none]
+            [9, fill=Apricot]
+        ]       
+        [$\dots$, draw=none]        
+    ]
+    [3,
+        [$\dots$, draw=none]
+    ]
+    [4, fill=SpringGreen, shape=diamond        
+        [7, minimum size=2em, shape=rectangle]
+        [8, minimum size=2em, shape=rectangle]
+    ]
+]
+\begin{customlegend}[
+  legend entries={ % <= in the following there are the entries
+  Node searching for closer parent,
+  Finding closest parent,
+  Grandparent, 
+  Random sibling of grandparent,  
+  Parent candidates,
+  Non-participants in parent selection
+  },
+  legend style={at={(5.5,3.25)},font=\footnotesize}] % <= to define position and font legend
+  % the following are the "images" and numbers in the legend
+  \addlegendimage{shape in legend={circle}{Apricot}}
+  \addlegendimage{shape in legend={circle}{SpringGreen}}
+  \addlegendimage{shape in legend={star}{white}}
+  \addlegendimage{shape in legend={diamond}{white}}
+  \addlegendimage{shape in legend={rectangle}{white}}
+  \addlegendimage{shape in legend={circle}{white}}
+\end{customlegend}
+\end{forest}
+
+
+\end{document}

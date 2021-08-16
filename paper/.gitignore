@@ -1,0 +1,18 @@
+# Ignore the main pdf and log files
+## only main because figs contain pdf too
+main.pdf
+*.log
+
+######## Latex Stuff ########
+*.aux
+*.bbl
+*.bcf
+*.blg
+*-blx.bib
+*.fdb_latexmk
+*.fls
+*.out
+*.run.xml
+*.synctex
+*.synctex.gz
+*.toc

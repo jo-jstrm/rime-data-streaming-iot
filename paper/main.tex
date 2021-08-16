@@ -1,0 +1,78 @@
+% \documentclass{ronpub}  % for articles of RonPub journals
+% \documentclass[ojdb]{ronpub}  % for articles of the Open Journal of Databases
+% \documentclass[ojwt]{ronpub}  % for articles of the Open Journal of Web Technologies
+% \documentclass[ojsw]{ronpub}  % for articles of the Open Journal of Semantic Web
+% \documentclass[ojcc]{ronpub}  % for articles of the Open Journal of Cloud Computing
+\documentclass[ojiot]{ronpub} % for articles of the Open Journal of Internet of Things
+% \documentclass[ojis]{ronpub}  % for articles of the Open Journal of Information Systems
+% \documentclass[ojdb, issue1, volume1, year13]{ronpub}  % for articles of the Open Journal of Databases, issue 1, volume 1, year 2013
+
+%\usepackage{qtree} % just for figure example
+\usepackage{listings} % for using listings...
+\usepackage{booktabs} % For formal tables
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+\usepackage[subtle]{savetrees}
+\usepackage{ulem}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage[linesnumbered,lined,noend,ruled]{algorithm2e}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.5pt,fill=white] (char) {#1};}}
+
+\newcommand{\textInvertedTriangle}{\raisebox{0pt}{\tikz{
+    \node[draw,scale=0.3,regular polygon, regular polygon sides=3,fill=black,rotate=180](){};}}}            
+\newcommand{\textCircle}{\raisebox{0.5pt}{\tikz{
+    \node[draw,scale=0.4,circle,fill=black](){};}}}
+\newcommand{\textDiamond}{\raisebox{0pt}{\tikz{
+    \node[draw,scale=0.4,diamond,fill=black](){};}}}
+
+\setcounter{page}{1}
+
+\title{Streaming~Data~through~the~IoT~via Actor-Based~Semantic~Routing~Trees}
+\author{
+Dimitrios Giouroukis{$^{1}$}\quad
+Johannes Jestram{$^{1, \dagger}$}\quad
+Steffen Zeuch{$^{1,2}$}\quad
+Volker Markl{$^{1,2}$}
+}
+\affiliation{$^{1}$Technische Universit\"at Berlin, $^{2}$DFKI GmbH\\ $^{1}$\{firstname.lastname\}@tu-berlin.de\quad $^{\dagger}$\{firstname.lastname\}@alumni.tu-berlin.de\quad $^{2}$\{firstname.lastname\}@dfki.de}
+
+\abstract{
+  \input{chapters/abstract.tex}
+}
+
+% \type{Short communication} % for short communication
+\type{Regular research paper} % for regular research paper
+% \type{Research review} % for research review
+% \type{Visionary paper} % for visionary paper
+
+\keywords{Edge Networking, Topology Management}
+
+\setup{D. Giouroukis, J. Jestram, S. Zeuch, V. Markl: Streaming Data through the IoT via Actor-Based Semantic Routing Trees}
+
+\begin{document}
+
+\maketitle
+
+\input{chapters/intro.tex}
+\input{chapters/background.tex}
+\input{chapters/design.tex}
+\input{chapters/evaluation.tex}
+\input{chapters/related-work.tex}
+% \input{chapters/future-work.tex}
+\input{chapters/conclusion.tex}
+\input{chapters/acknowledgements.tex}
+\input{chapters/author-bios.tex}
+
+\bibliography{citations}
+
+\end{document}

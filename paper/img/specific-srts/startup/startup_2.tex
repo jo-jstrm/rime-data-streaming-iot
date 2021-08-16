@@ -1,0 +1,26 @@
+\documentclass{standalone} 
+\usepackage[dvipsnames, fixpdftex]{xcolor}
+\usepackage{forest}
+\usetikzlibrary{calc,shadings}
+
+\begin{document}
+
+\begin{forest}
+for tree={circle,draw,minimum size = 2.25em, l sep=15pt, s sep=2.5em}
+[0, 
+    [1
+      [9] {\draw(.west) node[left]{$(8)$};}
+    ] {\draw(.west) node[left]{$(10)$};}
+    [2
+      [4] {\draw(.west) node[left]{$(21)$};}
+      [5] {\draw(.west) node[left]{$(16)$};}
+      ] {\draw(.west) node[left]{$(20)$};}
+    [3
+      [6] {\draw(.west) node[left]{$(28)$};}
+      [7] {\draw(.west) node[left]{$(31)$};}
+      [8] {\draw(.west) node[left]{$(29)$};}
+    ] {\draw(.west) node[left]{$(30)$};}
+] {\draw(.west) node[left]{$(15)$};}
+\end{forest}
+
+\end{document}

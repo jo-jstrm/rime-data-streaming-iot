@@ -1,0 +1,20 @@
+\documentclass{standalone} 
+\usepackage{forest}
+
+\begin{document}
+
+\begin{forest}
+for tree={circle,draw,minimum size = 2.5em, l sep=20pt}
+[root 
+    [1, white, name=one, for tree={s sep = 2.0em}, edge=white
+      [3, edge=white] { \draw (.north) node[above]{!}; }
+      [4, edge=white] { \draw (.north) node[above]{!}; }
+    ]
+    [2, for tree={s sep = 2.0em}
+      [5] 
+      [6]
+  ] 
+] { \draw (.north) node[above]{!}; }
+\end{forest}
+
+\end{document}

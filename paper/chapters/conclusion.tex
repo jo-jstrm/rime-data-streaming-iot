@@ -1,0 +1,11 @@
+%!TEX root = ../main.tex
+\section{Conclusion and Future Work}
+\label{sec:conclusion}
+In this paper, we proposed Rime, a geo-distributed approach to propagating routing information efficiently in an IoT environment with heterogeneous communication schemes.
+% \steffen{this is a good punch line and should be used more often throughput the paper} 
+Rime copes with
+a volatile topology while also reducing communication costs. Our work extends concepts from distributed sensor networks to in-application routing while accounting for the complex needs of an IoT environment. We show that Rime reduces message overhead for queries by up to $82.65\%$
+by controlling the parent selection. Rime enables
+fast updates over a dynamic topology through its efficient node tracking process and bridges the gap between WSNs and post-cloud paradigms.
+
+As future work, we plan to extend our node tracking policy and re-design Rime as a drop-in networking component for SPEs. This approach will allow for a tighter coupling of an optimizer of the SPE with Rime when making routing decisions. The optimizer will benefit from Rime by getting timely topology updates and offload reconfigurations.

@@ -1,0 +1,71 @@
+\documentclass{standalone}
+\usepackage[dvipsnames, fixpdftex]{xcolor}
+\usepackage{forest}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+% Code from Christian Feuersänger
+% https://tex.stackexchange.com/questions/54794/using-a-pgfplots-style-legend-in-a-plain-old-tikzpicture#54834
+
+% argument #1: any options
+\newenvironment{customlegend}[1][]{%
+    \begingroup
+    % inits/clears the lists (which might be populated from previous
+    % axes):
+    \csname pgfplots@init@cleared@structures\endcsname
+    \pgfplotsset{#1}%
+}{%
+    % draws the legend:
+    \csname pgfplots@createlegend\endcsname
+    \endgroup
+}%
+
+% makes \addlegendimage available (typically only available within an
+% axis environment):
+\def\addlegendimage{\csname pgfplots@addlegendimage\endcsname}
+
+%%--------------------------------
+
+% definition to insert numbers
+\pgfkeys{/pgfplots/number in legend/.style={%
+        /pgfplots/legend image code/.code={%
+            \node at (0.295,-0.0225){#1};
+        },%
+    },
+    /pgfplots/shape in legend/.style 2 args={%
+    /pgfplots/legend image code/.code={%
+        \node[draw,#1,fill=#2,minimum width=3mm] at (0.295,-0.0225){};
+        },%
+    },
+}
+
+\begin{document}
+
+\begin{forest}
+for tree={circle,draw,minimum size = 2.25em, l sep=0.4em, s sep=7.5em, outer sep=0.1em}
+[0, name=zero,  
+    [1, name=one,
+      [3, name=three, shape=star]
+      [4, name=four]
+    ]
+    [2, name=two, shape=star, for tree={l sep=0.7em}
+      [5, name=five] 
+      [6, name=six] 
+    ]  
+] 
+\draw[->, color=black] (five) to node[pos=0.5,xshift=-2.5mm,yshift=1.5mm]{1.)} (two);
+\draw[->, color=black] (five) to[out=south west, in=south east] node[pos=0.5, xshift=0.0mm,yshift=2.5mm]{1.)} (three);
+\begin{customlegend}[
+  legend entries={ % <= in the following there are the entries
+  Nodes tracking node 5,
+  Message containing state
+  },
+  legend style={at={(5.65,1.5)},font=\footnotesize}] % <= to define position and font legend
+  % the following are the "images" and numbers in the legend
+  \addlegendimage{shape in legend={star}{white}}
+  \addlegendimage{stealth-, thick}
+\end{customlegend}
+\end{forest}
+
+\end{document}

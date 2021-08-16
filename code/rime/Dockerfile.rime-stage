@@ -1,0 +1,16 @@
+FROM ubuntu:latest
+
+ARG DEBIAN_FRONTEND=noninteractive 
+RUN apt update -qq && \
+    apt install -qq cmake git build-essential iproute2 ifupdown net-tools -y && \
+    apt autoclean -qq -y && \
+    apt autoremove -qq -y
+
+RUN git clone --single-branch --branch 0.17.6 https://github.com/actor-framework/actor-framework.git 
+
+RUN cd actor-framework && \
+    ./configure --with-log-level=ERROR && \
+    cd build && \
+    make && \
+    make test && \
+    make install

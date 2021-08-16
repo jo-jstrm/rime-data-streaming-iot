@@ -1,0 +1,36 @@
+%!TEX root = ../main.tex
+\section{Future Work}
+\label{sec:future-work}
+\steffen{sorry this is way too much for future work and future work comes after the conclusion}
+\sout{
+In this section we cover some open points that we would like to address in the future with Rime.
+First, we would like to further quantify \textit{i)} the relationship between query selectivity and 
+messaging overhead of Rime compared to a naive query dissemination approach and \textit{ii)} 
+the frequency of movement updates where using query dissemination becomes 
+inefficient and automatically switch between execution models.
+\steffen{so now you shoot yourself in your own foot by pointing the reviewer to all shortcomings of you approach, please remove this}
+
+Second, we do not address the questions of \textit{i) how} Rime can help with 
+query optimization and \textit{ii) how} to improve relational-operator placement.
+By combining \textit{SRTs} over multiple attributes, Rime can potentially increase the performance
+of queries with a selection operation in a \textit{WHERE} clause. This is interesting
+since currently Rime only supports one \textit{AT} over a single attribute.
+
+Finally, we envision Rime as an extension to 
+load balancing and efficient query processing in SPEs. Regarding load balancing, 
+Rime helps identify neighboring nodes to offload processing or perform
+load shedding. Since we focus on organizational aspects of the IoT and on efficient query 
+dissemination, an SPE that uses Rime can use different routing paths for results 
+routing (sources to sink) than for query routing (sink to sources, with Rime). 
+In contrast to query dissemination, the routing of results requires the fastest 
+connections \textit{to}, and the highest throughput \textit{at} the downstream nodes. 
+Therefore, distinct routing paths for queries and results can potentially improve overall 
+performance. In this regard, Rime acts as an overlay to existing 
+networks and can be a drop-in extension module for existing SPEs.}
+
+% Finally, current state-of-the-art on emulating IoT testbeds moves
+% towards hybrid application deployments. For this paper we used
+% Containernet, which is based on Mininet, in order to create a manual
+% topology and insert latency depending on the level of the topology.
+% In order to further ease the modeling, deployment, and reproducibility of our
+% experiments, we consider moving to IoT-first network emulators, such as Fogify.

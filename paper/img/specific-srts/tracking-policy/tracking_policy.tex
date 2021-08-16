@@ -1,0 +1,85 @@
+\documentclass{standalone} 
+\usepackage[dvipsnames, fixpdftex]{xcolor}
+\usepackage{forest}
+\usetikzlibrary{calc,shadings}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+% Code from Christian Feuersänger
+% https://tex.stackexchange.com/questions/54794/using-a-pgfplots-style-legend-in-a-plain-old-tikzpicture#54834
+
+% argument #1: any options
+\newenvironment{customlegend}[1][]{%
+    \begingroup
+    % inits/clears the lists (which might be populated from previous
+    % axes):
+    \csname pgfplots@init@cleared@structures\endcsname
+    \pgfplotsset{#1}%
+}{%
+    % draws the legend:
+    \csname pgfplots@createlegend\endcsname
+    \endgroup
+}%
+
+% makes \addlegendimage available (typically only available within an
+% axis environment):
+\def\addlegendimage{\csname pgfplots@addlegendimage\endcsname}
+
+%%--------------------------------
+
+% definition to insert numbers
+\pgfkeys{/pgfplots/number in legend/.style={%
+        /pgfplots/legend image code/.code={%
+            \node at (0.295,-0.0225){#1};
+        },%
+    },
+    /pgfplots/shape in legend/.style 2 args={%
+    /pgfplots/legend image code/.code={%
+        \node[draw,#1,fill=#2,minimum width=3mm] at (0.295,-0.0225){};
+        },%
+    },
+}
+
+\begin{document}
+
+\begin{forest}
+for tree={circle,draw,minimum size = 2.25em, l sep=15pt, s sep=2.5em}
+[0, fill=White  
+    [1, fill=SpringGreen, shape=diamond, for tree={s sep = 3.0em}  
+      [$\dots$, draw=none]
+    ]
+    [2, fill=SpringGreen, shape=star, for tree={s sep = 2.5em}
+      [$\dots$, draw=none]
+      [6, fill=Apricot]
+    ]
+    [3, fill=White      
+      [$\dots$, draw=none]
+    ]
+    [4, fill=White,
+      [$\dots$, draw=none]      
+    ]
+    [5, fill=White,
+      [$\dots$, draw=none]      
+    ]
+]
+\begin{customlegend}[
+  legend entries={ % <= in the following there are the entries
+  Reference node,
+  Tracked nodes,
+  Non-tracked nodes,
+  Parent, 
+  Backup parent  
+  },
+  legend style={at={(5.5,2.5)},font=\footnotesize}] % <= to define position and font legend
+  % the following are the "images" and numbers in the legend
+  \addlegendimage{shape in legend={circle}{Apricot}}
+  \addlegendimage{shape in legend={circle}{SpringGreen}}
+  \addlegendimage{shape in legend={circle}{white}}
+  \addlegendimage{shape in legend={star}{white}}
+  \addlegendimage{shape in legend={diamond}{white}}
+\end{customlegend}
+\end{forest}
+
+
+\end{document}

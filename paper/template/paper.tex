@@ -1,0 +1,205 @@
+\documentclass{ronpub}  % for articles of RonPub journals
+% \documentclass[ojdb]{ronpub}  % for articles of the Open Journal of Databases
+% \documentclass[ojwt]{ronpub}  % for articles of the Open Journal of Web Technologies
+% \documentclass[ojsw]{ronpub}  % for articles of the Open Journal of Semantic Web
+% \documentclass[ojcc]{ronpub}  % for articles of the Open Journal of Cloud Computing
+% \documentclass[ojiot]{ronpub} % for articles of the Open Journal of Internet of Things
+% \documentclass[ojis]{ronpub}  % for articles of the Open Journal of Information Systems
+% \documentclass[ojdb, issue1, volume1, year13]{ronpub}  % for articles of the Open Journal of Databases, issue 1, volume 1, year 2013
+
+\usepackage{qtree} % just for figure example
+\usepackage{listings} % for using listings...
+
+\setcounter{page}{1}
+
+\title{RonPub Journal Paper Template}
+\author{Name of author 1 $^{A}$, Name of author 2 $^{B}$, Name of author 3 $^{A}$}
+\affiliation{
+$^{A}$ Institute 1, University 1, Full Address, City, Country, \{email1, email3\}@email.edu\\
+$^{B}$ Institute 2, University 2, Full Address, City, Country, email2@mail.edu}
+
+\abstract{
+This article is not a scientific paper, but a template file and guidelines for helping authors prepare their scientific papers.
+}
+
+\type{Short communication} % for short communication
+% \type{Regular research paper} % for regular research paper
+% \type{Research review} % for research review
+% \type{Visionary paper} % for visionary paper
+
+\keywords{latex, template, paper, journal, RonPub}
+
+\setup{Name of author 1, Name of author 2, Name of author 3: RonPub Journal Paper Template}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+The objectives of RonPub are publishing research papers not only with high-quality content but also with a unified, first-class presentation. A powerful tool for realizing a unified and first-class appearance is templates. A number of nice paper templates have been developed, like ACM templates \cite{ACM13} and IEEE templates \cite{IEEE13a} \cite{IEEE13b}. However, these templates and guidelines do not specially fit the features and needs of our journals. Therefore, we develop the RonPub journal template and guidelines for our authors. 
+
+This template provides formatting and styling specifications and guidelines for the common paper components. One main purpose of developing this template is to release authors' formatting work as much as possible. Therefore, a large part of formatting and styling specification has been setup or illustrated in this template file. For formatting their manuscripts authors simply replace the content in this file with their own material.
+
+This template and guidelines can be freely used and modified under the condition that the source is properly cited. We also welcome any feedback and suggestion to help us to improving this template file (email to {manage@ronpub.com}).
+
+Furthermore, we encourage authors to have a look at \cite{Y89}, an excellent handbook for science writing. This handbook addresses common mistakes and problems of technical writing, and will help science authors improve their writing and communication.
+
+\section{Structure of Article}
+
+As illustrated in this article, the structure of manuscripts is: Paper header, title, authors, affiliations, abstract, type of paper and keywords, main text, acknowledgements, references, appendix and biographies.
+
+The part above the title is the paper header, which authors should not alter. This part will be edited by RonPub.
+
+The content in the abstract should be concise and prepared as one paragraph. It states briefly the purpose of the research, the principal results and major conclusions. The abstract should not contain any undefined abbreviations. In order to be able to present the abstract separately from the article, it is better to avoid references in the abstract.
+
+The \emph{Type of Paper and Keywords} section should first contain the type of paper (regular research paper, short communication, research review or visionary paper). Afterwards, the most relevant keywords should be given, which describes the area the paper is about. One important purpose of this section is for manuscript review processing. Based on the information provided in this section, the Editor-in-Chief will assign your paper to the corresponding editor, and the editor will suggest proper reviewers also according to this section. Therefore, authors should give such keywords, which provide the concrete rather than general information about fields, techniques, and methods the manuscript is about. Later on, the information helps to classify the paper for readers. 
+
+For example, if the paper is a regular research paper, which describes a new method to optimize XPath queries, the \emph{Type of Paper and Keywords} section should contain "Regular research paper: \emph{database, query optimization, XML, XPath}".
+
+\subsection{Main Text}
+
+Main text is a large as well as major part of a paper. A separate section is needed to describe the structure and content guidelines for the main text.
+
+\subsubsection{Subdivision}
+
+The main text should be divided into clearly defined and numbered sections. Subsections should be numbered, e.g. 3.1 (then 3.1.1, 3.1.2, ...), 3.2, etc. Use this numbering also for internal cross-referencing. Each subsection should have a brief heading. 
+
+Theoretically, a section can be subdivided again and again. However, authors should avoid over-subdivision of sections. If we subdivide one section (e.g. Section 3) 4 times, we get a subsection numbered like 3.1.1.1.1. With such section numbering readers might easily lose their orientation.
+
+The formatting and styling has been setup for sections, subsections and subsubsections in this template document. The formatting and styling for further subdivided subsections is the same as one for subsubsection.
+
+\subsubsection{Section and Content}
+
+The main text consists of multiple sections, and typically includes: Introduction, related work, own contribution, discussion and conclusion.
+
+\textbf{Introduction:} should be the first section in your manuscript. It states the motivations and objectives of the work.
+
+\textbf{Related Work:} This section is not a detailed literature survey. Instead, authors should provide a clear and concise discussion and comparison between the authors' own work and the related work.
+
+\textbf{Own Contribution:} A major part in the main text. This part may consist of more than one section. Authors' research work, e.g. the new techniques, or theory, is presented in this part. Application papers may include an implementation (sub-) section. This section represents a practical development (e.g., a prototype) from a theoretical basis. It presents the implementation of critical techniques. An evaluation section is usually a part of own contribution. Experimental results are presented in this part.
+
+\textbf{Discussion and Conclusion:} Discussion section should explore the significance of the research results. The conclusions of the study may be presented in a short conclusions section. A combined discussion and conclusion section is often appropriate.
+
+\section{Formatting}
+
+This template document provides formatting and styling specifications for the widely used paper components. An amount of formatting and styling prescription has been built in the respective components, like margins, column widths, line spaces, and text fonts. We will not repeat it here with words. We will only describe the formatting and styling, which is not (completely and obviously) reflected in the corresponding elements and components.
+
+\subsection{General}
+
+This template has been tailored for output on the A4 paper size (8.3in x 11.7in/210mm x 297mm). The columns on the last page should be as close as possible to equal length. 
+
+Authors should follow the formatting and styling which have been set up in this template.
+
+\subsection{Figures, Listings and Tables}
+
+All figures, tables and listings should be embedded in manuscripts and formatted accordingly. Photographs, schemas, graphs and diagrams are to be referred to as figures. Figures and tables are to be centered in columns, but listings are to be position flush left of the columns. Large figures, tables and listings may span across both columns. They should be numbered and be cited in text in consecutive numerical order. 
+
+Each figure, table and listing should be provided with a caption. All captions should use 10 point Times New Roman font. Figure captions are below the figures; table and listing captions appear above the tables. The text for table header (first row) is bold. All table text is 10 point Times New Roman. We suggest 10 point Courier New font for listings.
+
+In Figure \ref{fig:tree} you find an example of a figure. Listing \ref{list:submission} shows how to present listings, and Table \ref{tab:numbers} is an example of a table.
+
+\begin{figure}[h!]
+  \centering
+     \Tree [.root first [.inner second third ] fourth ]
+  \caption{Example of a figure}
+  \label{fig:tree}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{lstlisting}[caption=Example of a listing, label=list:submission]
+(1) write good paper
+(2) submit paper
+(3) while(not notified)
+(4)   drink good tea
+\end{lstlisting}
+\end{figure}
+
+\begin{table}[h!]
+ \centering
+ \caption{Example of a table}
+ \begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Country} & \textbf{Capital} & \textbf{Area (km$^2$)} \\
+  \hline
+  Germany & Berlin & 356 959 \\
+  \hline
+  China & Beijing & 9 596 960 \\
+  \hline
+  \end{tabular}
+  \label{tab:numbers}
+\end{table}
+
+\subsection{Equations}
+
+Equations should be typed using Times New Roman or the Symbol font, and both fonts are styled with 10 pt italic. They are numbered consecutively with Arabic numerals; equation numbers are placed in parentheses and to position flush right of the column,
+
+\begin{equation}
+E = m ^. c^2
+\end{equation}
+
+\subsection{References}
+
+References should be published materials accessible to the public. Every cited reference in the text should appear in the list of references and vice versa.
+
+\subsubsection{Format}
+
+References should be listed in the section of references and formatted accordingly. The reference list is alphabetically ordered according to authors' surname, and the reference number is placed in square brackets and to position flush left of the reference.
+
+Typical reference types are illustrated in the \textbf{\scshape \selectfont References} section
+like conference article \cite{AS13}, journal article \cite{AS12}, book \cite{Gro11}, chapter in book \cite{DrFlGr09} and online document \cite{A13}.
+As a minimum for web references and online documents, the full URL should be given and the date when the reference was last accessed.
+
+\subsubsection{Citation}
+
+The citation of a reference in the text should be identified by its number in square brackets. The actual authors can be referred to, but the reference numbers must always be given.
+
+Some examples of common citation are:
+
+\begin{itemize}
+\item Work in \cite{AS12} is based on the technique developed in \cite{AS13}.
+\item Groppe \cite{Gro11} is an excellent introduction into Semantic Web databases.
+\item \cite{ACM13} \cite{IEEE13a} \cite{IEEE13b} are nice paper templates.
+\end{itemize}
+
+\subsection{Footnote}
+
+Footnotes should be avoided if possible. Necessary footnotes should be numbered using Arabic numerals, and indicated in the text by superscript number. The actual footnote is placed at the bottom of the column in which it was cited, and is separated from the main text by a short line extending at the foot of the column.
+
+\section{Summary and Conclusions}
+
+This template document prescribes the format, style and structure of scientific papers. All manuscripts for RonPub journals should comply with this template.
+
+\section*{Acknowledgements}
+
+If you have acknowledgements, please place them here.
+
+\bibliography{\jobname_no_dashes_at_repeated_names,references}{}
+
+\section*{Appendices}
+
+Appendices are optional. They should be placed after the references and before the author biographies.
+If there is more than one appendix, they should be identified as A, B, etc. 
+
+\section*{Author Biographies}
+
+\ifpdf
+  \newcommand{\photofile}{AnonymousPerson.pdf}
+\else 
+  \newcommand{\photofile}{AnonymousPerson.eps}
+\fi
+
+\bio{\photofile}{A biography for each author should be supplied here. 
+Each author please provide a photograph in her or his biography. The author photograph should have a width of 3 cm. 
+The biography should not be less than 70 words.
+%
+The ronpub class provides the commands  \emph{\textbackslash bio} and \emph{\textbackslash shortbio} to include biographies.
+Biographies with long text, which is longer than the photo, should use \emph{\textbackslash bio\{photo\_file\}\{text of bio here\}}.
+This command wraps the text around the photo.
+}
+
+\shortbio{\photofile}{
+Biographies with short text should use the latex command: \emph{\textbackslash shortbio\{photo\_file\}\{text of bio here\}}. However, a short biography should not be less than 70 words.
+}
+
+\end{document}

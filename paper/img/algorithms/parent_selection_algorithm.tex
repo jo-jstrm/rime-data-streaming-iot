@@ -1,0 +1,47 @@
+\documentclass{standalone}
+\usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
+
+\begin{document}
+    
+\begin{algorithm}[H]
+    \SetAlgoLined
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+    \SetKw{Request}{request}
+    \SetKw{From}{from}
+    \SetKw{Receive}{receive}
+
+    \Input{find-better-parent request}
+    \KwData{curr\_dist = distance to current parent \\ \hspace{3.1em}lat = requesting node's latitude \\
+    \hspace{3.1em}lon = requesting node's longitude \\
+    \hspace{3.1em}pos = (lat,lon)}
+    \Output{new parent for requester}
+    \BlankLine    
+    \Begin{
+        best\_dist = INTEGER\_MAX\;
+        best\_idx = -1\;        
+        \BlankLine
+        \tcp{find best parent locally}
+        \For{child : self.children}{
+            dist = euclidean\_distance(pos, child\_pos)\;
+            \If{dist $<$ best\_dist}{
+                best\_dist = dist\;
+                best\_idx = children.current\_idx\;
+            }
+        }
+        \BlankLine
+        \Request random\_sibling \From self.parent\;
+        \Receive best\_rand, best\_rand\_dist \tcp{best child from random sibling and requesting node's distance to best child}
+        \BlankLine
+        \uIf{best\_rand\_dist $<$ best\_dist}{
+            \Return{best\_rand, best\_rand\_dist}
+        }
+        \Else{
+            \Return{children[best\_idx], best\_dist}
+        }
+    }
+\caption{Parent selection at requesting node's grandparent}
+\label{alg:parent_selection}
+\end{algorithm}
+
+\end{document}

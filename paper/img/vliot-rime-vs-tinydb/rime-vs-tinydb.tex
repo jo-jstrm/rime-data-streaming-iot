@@ -1,0 +1,306 @@
+\documentclass[border=9]{standalone}
+\usepackage[dvipsnames, fixpdftex]{xcolor}
+\usepackage{tikz}
+
+\usetikzlibrary{trees,decorations,shapes.geometric,backgrounds}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+
+% Circle a character
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=0.5pt,fill=white] (char) {#1};}}
+
+% change color of node after declaration
+\newcommand\labeltextof[1]{\csname labeltextof@#1\endcsname}
+\newcommand{\aftercolorof}[2]{% #1 is the color, #2 us the node
+  \path (#2.center) node[#1] (#2-2) {\labeltextof{#2}};
+}
+
+% Legend
+% Code from Christian Feuersänger
+% https://tex.stackexchange.com/questions/54794/using-a-pgfplots-style-legend-in-a-plain-old-tikzpicture#54834
+
+% argument #1: any options
+\newenvironment{customlegend}[1][]{%
+    \begingroup
+    % inits/clears the lists (which might be populated from previous
+    % axes):
+    \csname pgfplots@init@cleared@structures\endcsname
+    \pgfplotsset{#1}%
+}{%
+    % draws the legend:
+    \csname pgfplots@createlegend\endcsname
+    \endgroup
+}%
+
+% makes \addlegendimage available (typically only available within an
+% axis environment):
+\def\addlegendimage{\csname pgfplots@addlegendimage\endcsname}
+
+%%--------------------------------
+
+% definition to insert numbers
+\pgfkeys{/pgfplots/number in legend/.style={%
+        /pgfplots/legend image code/.code={%
+            \node at (0.295,-0.0225){#1};
+        },%
+    },
+    /pgfplots/shape in legend/.style 2 args={%
+    /pgfplots/legend image code/.code={%
+        \node[draw,#1,fill=#2,minimum width=3mm] at (0.295,-0.0225){};
+        },%
+    },
+}
+% End Legend
+
+\makeatletter
+
+\newcount\tikzcountchildi
+\newcount\tikzcountchildii
+\newcount\tikzcountchildiii
+\newcount\tikzcountchildiv
+\newcount\tikzcountchildv
+\newcount\tikzcountchildvi
+
+\tikzset{
+    garlic growth/.style={
+        growth function=\tikz@grow@garlic,
+        /tikz/mmap/name=#1,mmap/#1/.is family,
+        mmap/initialize counts,
+        execute at end scope={%
+            \tikz@mmap@store@aux{n-i}{\the\tikzcountchildi}%
+            \tikz@mmap@store@aux{n-ii}{\the\tikzcountchildii}%
+            \tikz@mmap@store@aux{n-iii}{\the\tikzcountchildiii}%
+            \tikz@mmap@store@aux{n-iv}{\the\tikzcountchildiv}%
+            \tikz@mmap@store@aux{n-v}{\the\tikzcountchildv}%
+            \tikz@mmap@store@aux{n-vi}{\the\tikzcountchildvi}
+        }
+    },
+    mmap/.cd,initialize counts/.code={
+        \tikzcountchildi=0%
+        \tikzcountchildii=0%
+        \tikzcountchildiii=0%
+        \tikzcountchildiv=0%
+        \tikzcountchildv=0%
+        \tikzcountchildvi=0%
+    }
+}
+
+\def\tikz@mmap@store@aux#1#2{%
+    \immediate\write\@mainaux{\string\expandafter\xdef\noexpand\csname pgfk@/tikz/mmap/\pgfkeysvalueof{/tikz/mmap/name}/#1\string\endcsname{#2}}
+}%
+
+\def\tikz@mmap@get@from@aux#1#2{%
+    \ifcsname pgfk@/tikz/mmap/\pgfkeysvalueof{/tikz/mmap/name}/#1\endcsname
+        \edef#2{\csname pgfk@/tikz/mmap/\pgfkeysvalueof{/tikz/mmap/name}/#1\endcsname}%
+    \else
+        \edef#2{0}%
+    \fi
+}
+
+\newcount\tikzcountgrandchild
+
+\def\tikz@grow@garlic{%
+  \pgfmathsetmacro{\pgfutil@tempa}{\pgfkeysvalueof{/tikz/mmap/overall rotation}}%
+  \ifcase\tikztreelevel 
+  \or
+   \global\advance\tikzcountchildi by1\relax%
+   \tikz@mmap@get@from@aux{n-i}{\myni}%
+   \tikz@mmap@get@from@aux{n-ii}{\mynii}%
+   \tikz@mmap@get@from@aux{n-1-\the\tikzcountchildi}{\mynall}%
+   \tikz@mmap@get@from@aux{p-1-\the\tikzcountchildi}{\mypi}%
+   \ifnum\mynii>0
+    \pgfmathsetmacro{\pgfutil@tempa}{\pgfutil@tempa+\pgfkeysvalueof{/tikz/mmap/sign}%
+        *(\pgfkeysvalueof{/tikz/mmap/child weight}*(\mypi)*360/\mynii+%
+            (1-\pgfkeysvalueof{/tikz/mmap/child weight})*(\tikzcountchildi-1)*360/\myni)}%
+   \fi
+  \or
+   \global\advance\tikzcountchildii by1\relax%
+   \tikz@mmap@get@from@aux{n-ii}{\mynii}%
+   \tikz@mmap@get@from@aux{n-1-1}{\mynall}%
+   \ifnum\mynii>0
+    \pgfmathsetmacro{\pgfutil@tempa}{\pgfutil@tempa+\pgfkeysvalueof{/tikz/mmap/sign}%
+    *(\tikzcountchildii-1-\mynall/2)*360/\mynii}%
+   \fi
+   \ifnum\tikznumberofcurrentchild=1\relax
+    \tikz@mmap@store@aux{n-1-\the\tikzcountchildi}{\the\tikznumberofchildren}%
+    \tikz@mmap@store@aux{p-1-\the\tikzcountchildi}{\the\numexpr\tikzcountchildii-1}%
+    \tikz@mmap@store@aux{a-1-\the\tikzcountchildi-\the\tikzcountchildii}{\pgfutil@tempa}%
+   \fi   
+  \or
+   \global\advance\tikzcountchildiii by1\relax%
+   \ifnum\tikznumberofcurrentchild=1\relax
+    \tikz@mmap@store@aux{n-1-\the\tikzcountchildi-\the\tikzcountchildii}{\the\tikznumberofchildren}%
+    \tikz@mmap@store@aux{p-1-\the\tikzcountchildi-\the\tikzcountchildii}{\the\numexpr\tikzcountchildiii-1}%
+   \fi   
+   \tikz@mmap@get@from@aux{n-iii}{\myniii}%
+   \tikz@mmap@get@from@aux{a-1-1-1}{\bettera}%
+   \tikz@mmap@get@from@aux{n-1-1-1}{\mynall}%
+   \ifdim\bettera pt=0pt\relax
+   \else
+    \pgfmathsetmacro{\pgfutil@tempa}{\bettera}%
+   \fi
+   \ifnum\myniii>0
+    \pgfmathsetmacro{\pgfutil@tempa}{\pgfutil@tempa+\pgfkeysvalueof{/tikz/mmap/sign}%
+     *(\tikzcountchildiii-1-\mynall/2)*360/\myniii}%
+   \fi  
+  \or
+   \global\advance\tikzcountchildiv by1\relax%
+   \tikz@mmap@get@from@aux{n-iv}{\myniv}%
+   \ifnum\myniv>0
+    \pgfmathsetmacro{\pgfutil@tempa}{\pgfutil@tempa+\pgfkeysvalueof{/tikz/mmap/sign}*(\tikzcountchildiv-1)*360/\myniv}%
+   \fi  
+  \or
+   \tikz@mmap@get@from@aux{n-v}{\mynv}%
+   \pgfmathsetmacro{\pgfutil@tempa}{\pgfutil@tempa+\pgfkeysvalueof{/tikz/mmap/sign}*(\tikzcountchildv-1)*360/\mynv}%
+   \ifnum\mynv>0
+    \global\advance\tikzcountchildv by1\relax%
+   \fi
+  \or
+   \global\advance\tikzcountchildvi by1\relax%
+   \tikz@mmap@get@from@aux{n-vi}{\mynvi}%
+   \ifnum\myvi>0
+    \pgfmathsetmacro{\pgfutil@tempa}{\pgfutil@tempa+(\tikzcountchildvi-1)*360/\mynvi}%
+   \fi  
+  \fi
+  \pgftransformreset% 
+  \pgftransformshift{\pgfpoint{\pgfkeysvalueof{/tikz/mmap/overall xshift}}%
+        {\pgfkeysvalueof{/tikz/mmap/overall yshift}}}%
+  \pgftransformrotate{\pgfutil@tempa}%
+  \pgftransformxshift{\the\tikzleveldistance}%
+}
+
+\makeatother
+
+\begin{document}
+
+\tikzset{mmap/.cd,
+    name/.initial=undef,
+    overall rotation/.initial=0,
+    overall xshift/.initial=0pt,
+    overall yshift/.initial=0pt,
+    sign/.initial=1,
+    child weight/.initial=0.5,
+    /tikz/.cd,
+    Xshift/.style={xshift=#1,mmap/overall xshift=#1},
+    Yshift/.style={yshift=#1,mmap/overall yshift=#1},
+    branch color/.style={
+        concept color=#1!80,ball color=#1!50,
+        every child/.append style={concept color=#1!50},
+    }
+}
+
+\begin{tikzpicture}[garlic growth=A,mmap/child weight=0,
+                    mmap/overall rotation=15,mmap/sign=-1,
+                    shape = circle,
+                    level 1/.style={shape = diamond, minimum size=1.75em,
+                        level distance=1.2cm,
+                    },
+                    level 2/.style={shape = diamond, minimum size=1em,
+                        level distance=2.4cm,
+                    },
+                    level 3/.style={shape = circle, minimum size=1mm,
+                        level distance=3.6cm,sibling angle=40,
+                    },
+                    edge from parent/.style={draw, very thin},nodes=fill,
+                    level distance=3em,
+                    triangle/.style = {fill=Black!100, regular polygon, regular polygon sides=3 },                    
+                    border rotated/.style = {shape border rotate=180}
+]
+    \node[triangle,
+        border rotated,
+        minimum size=3em,        
+        %label={[yshift=-2em]\circled{S}},                
+    ] (sink){}
+        child [color=Black!80] foreach \A in {0,1,2,3} { node (n\A){}
+            child [color=Black!60] foreach \B in {0,1,2} { node (n\A\B){}
+                \if\A1 
+                    \if\B2                                                    
+                        child [color=Black, draw=none, dotted] foreach \C in {0,1,2} { node (n\A\B\C){} edge from parent[draw=none]}                         
+                    \else child [color=Black, draw=none] foreach \C in {0,1,2} { node (n\A\B\C){}}   
+                    \fi
+                \else child [color=Black, draw=none] foreach \C in {0,1,2} { node (n\A\B\C){}}   
+                \fi
+            }
+        };
+    
+    % Change color of the "relevant" nodes
+    \aftercolorof{Dandelion}{n120}
+    
+    
+    
+    % Background
+    \begin{scope}[on background layer]  
+        \fill[CadetBlue!10] (sink.center) circle[radius=4.2cm];
+        
+        %% TinyDB %%
+        \fill[Blue!50] (n10.center) circle[radius=1.5em];
+        \fill[Blue!50] (n20.center) circle[radius=1.5em];        
+        
+        %% Rime %%
+        % South-east
+        \fill[PineGreen!50] (n10.center) circle[radius=1em];
+        \fill[PineGreen!50] (n11.center) circle[radius=1em];
+        \fill[PineGreen!50] (n12.center) circle[radius=1em];
+        
+        % South-west        
+        \fill[PineGreen!50] (n20.center) circle[radius=1em];
+        
+        % Add connections of yellow's siblings
+        \draw[Black!100, thick, dashed] (n120) -- (n12);
+        \draw[Black!100, thick, dotted] (n120) -- (n20);
+
+        \draw[Black!100, very thin] (n121) -- (n12);
+        \draw[Black!100, very thin] (n122) -- (n12);
+
+
+    \end{scope}
+    
+    % Legend
+    \begin{customlegend}[
+        legend columns = 3,
+        legend style={
+            % the /tikz/ prefix is necessary here...
+            % otherwise, it might end-up with `/pgfplots/column 2`
+            % which is not what we want. compare pgfmanual.pdf
+            /tikz/column 2/.style={column sep=1em},
+            /tikz/column 4/.style={column sep=1em}
+        },
+        legend entries={ % <= in the following there are the entries
+            Edge device,            
+            Sink,            
+            Fog node,            
+        },
+        legend style={at={(3,5)},font=\footnotesize}] % <= to define position and font legend
+        % the following are the "images" and numbers in the legend
+        \addlegendimage{shape in legend={circle, yshift=0.2em}{black}}        
+        \addlegendimage{shape in legend={triangle, border rotated, inner sep=1.2, yshift=0.3em}{black}}        
+        \addlegendimage{shape in legend={diamond, yshift=0.2em}{black}}        
+    \end{customlegend}
+    
+    \begin{customlegend}[
+        legend columns = 2,
+        legend style={
+            % the /tikz/ prefix is necessary here...
+            % otherwise, it might end-up with `/pgfplots/column 2`
+            % which is not what we want. compare pgfmanual.pdf
+            /tikz/column 2/.style={column sep=2em}            
+        },
+        legend entries={ % <= in the following there are the entries
+            Rime parent candidate,            
+            TinyDB parent candidate,            
+            Rime parent,
+            TinyDB parent,
+            Node searching a parent,   
+        },
+        legend style={at={(4.5,-4.5)},font=\footnotesize}] % <= to define position and font legend
+        % the following are the "images" and numbers in the legend        
+        \addlegendimage{shape in legend={draw=none, yshift=0.1em}{PineGreen!60}}        
+        \addlegendimage{shape in legend={draw=none, yshift=0.1em}{Blue!50}}        
+        \addlegendimage{Black, dashed, very thick}
+        \addlegendimage{Black, dotted, very thick}    
+        \addlegendimage{shape in legend={circle, draw=none, yshift=0.1em}{Dandelion}}
+    \end{customlegend}      
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,20 @@
+\documentclass{standalone} 
+\usepackage{forest}
+
+\begin{document}
+
+\begin{forest}
+for tree={circle,draw,minimum size = 2.5em, l sep=8pt}
+[0 
+    [1, name=one, for tree={s sep = 2.0em}  
+      [3] 
+      [4]
+    ] 
+    [2, for tree={s sep = 2.0em}
+      [5] 
+      [6]
+  ] 
+]
+\end{forest}
+
+\end{document}

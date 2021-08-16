@@ -1,0 +1,20 @@
+\documentclass{standalone} 
+\usepackage{forest}
+
+\begin{document}
+
+\begin{forest}
+for tree={circle,draw,minimum size = 2.25em, l sep=15pt, s sep=5.0em}
+[0  
+    [1, name=one, for tree={s sep = 5.0em}  
+      [3] {\draw(.west) node[left]{$(48,48)$};}
+      [4, name=four] {\draw(.west) node[left]{$(45,45)$};}
+    ] {\draw(.west) node[left]{$(45,48)$};}
+    [2, name=two, for tree={s sep = 5.0em}
+      [5] {\draw(.west) node[left]{$(71,71)$};}
+      [6] {\draw(.west) node[left]{$(68,68)$};}
+  ] {\draw(.west) node[left]{$(68,71)$};}
+] {\draw(.west) node[left]{$B\in(45,71)$};}
+\end{forest}
+
+\end{document}

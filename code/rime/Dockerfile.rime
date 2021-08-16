@@ -1,0 +1,14 @@
+FROM 74797469/rime-build:latest
+
+COPY . /opt/rime
+
+RUN cd && \
+    cd /opt/rime/ && \
+    rm -r build && \
+    mkdir build && \
+    cd build && \
+    cmake .. && \
+    make && \
+    make install && \
+    cd /opt && \
+    mkdir logs_rime
