@@ -1,0 +1,51 @@
+4 caf ERROR actor0 139637891296192 GLOBAL run_node main.cpp:48 STARTUP TIME 1617019608906780043
+4 Networker ERROR actor6 139637891270400 GLOBAL network_manager network_manager.cpp:132 node_id=39
+4 Networker ERROR actor6 139637891270400 GLOBAL network_manager network_manager.cpp:133 my_ip=10.0.0.41
+4 Networker ERROR actor6 139637891270400 GLOBAL network_manager network_manager.cpp:134 my_port=3000
+4 Networker ERROR actor6 139637891270400 GLOBAL network_manager network_manager.cpp:135 tier=2
+4 Networker ERROR actor6 139637891270400 GLOBAL network_manager network_manager.cpp:136 am_first_root=0
+4 Networker ERROR actor6 139637891270400 GLOBAL network_manager network_manager.cpp:137 parent_ip=10.0.0.39
+4 Networker ERROR actor6 139637891270400 GLOBAL network_manager network_manager.cpp:138 parent_port=3000
+4 caf ERROR actor0 139637891296192 GLOBAL run_node main.cpp:77 Networker published
+4 Networker ERROR actor6 139637891270400 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+4 Logger ERROR actor10 139637891270400 rime logger logger.cpp:23 LOGGER STARTUP
+4 Tree ERROR actor13 139637767005952 GLOBAL operator() srt_node.cpp:99 initial attribute range = (42.271818,46.095065)
+4 Tree ERROR actor13 139637767005952 GLOBAL operator() srt_node.cpp:101 Initial subtree range: x=(42.271818,42.271818), y=(46.095065,46.095065)
+1004 Networker ERROR actor6 139637767005952 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+1859 Networker ERROR actor6 139637767005952 net_init)<GLOBAL operator() network_manager.cpp:217 CONNECTED
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019612036122529 RECEIVED MESSAGE: new_parent
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019612036308569 RECEIVED MESSAGE: subscribe
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019612036444183 RECEIVED MESSAGE: new_backup
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019612036470456 RECEIVED MESSAGE: subscribe
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019612037426714 RECEIVED MESSAGE
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019612038337102 RECEIVED MESSAGE
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019613667668361 RECEIVED MESSAGE: collect_tree from parent
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019613667746213 RECEIVED MESSAGE: collect_tree from child
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019613769037003 RECEIVED MESSAGE: new_parent
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019616422328876 RECEIVED MESSAGE: new_backup
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019616422443479 RECEIVED MESSAGE
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019616422467304 RECEIVED MESSAGE
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019616422486850 RECEIVED MESSAGE: subscribe
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019616422499561 RECEIVED MESSAGE: subscribe
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019616423703712 RECEIVED MESSAGE
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019616424127650 RECEIVED MESSAGE: new_backup
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019616424177029 RECEIVED MESSAGE: subscribe
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019616614602531 RECEIVED MESSAGE
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019616654079750 RECEIVED MESSAGE: new_backup
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019616654111582 RECEIVED MESSAGE: subscribe
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019628692974781 RECEIVED MESSAGE: collect_tree from parent
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019628693056806 RECEIVED MESSAGE: collect_tree from child
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019643710728872 RECEIVED MESSAGE: collect_tree from parent
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019643710809342 RECEIVED MESSAGE: collect_tree from child
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019658717391617 RECEIVED MESSAGE: collect_tree from parent
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:43 1617019658717489246 RECEIVED MESSAGE: collect_tree from child
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:46 1617019613667886381 CURRENT TREE
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:46 1617019613667886381------39
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:46 1617019628693173148 CURRENT TREE
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:46 1617019628693173148------39
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:46 1617019643710927247 CURRENT TREE
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:46 1617019643710927247------39
+60004 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:46 1617019658717735447 CURRENT TREE
+60005 Logger ERROR actor10 139637723481856 int)<GLOBAL operator() logger.cpp:46 1617019658717735447------39
+82761 Tree ERROR actor13 139637723481856 GLOBAL operator() srt_node.cpp:453 PARENT DOWN, old parent = 1, backup = 64
+82761 Networker ERROR actor6 139637723481856 net_init)<GLOBAL operator() network_manager.cpp:659 MESSAGE SENT: registration at parent 64

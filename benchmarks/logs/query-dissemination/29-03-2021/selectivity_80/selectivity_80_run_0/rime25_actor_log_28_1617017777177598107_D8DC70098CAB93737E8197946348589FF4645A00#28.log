@@ -1,0 +1,51 @@
+2 caf ERROR actor0 140384855219136 GLOBAL run_node main.cpp:48 STARTUP TIME 1617017777180347928
+2 Networker ERROR actor6 140384855193344 GLOBAL network_manager network_manager.cpp:132 node_id=25
+2 Networker ERROR actor6 140384855193344 GLOBAL network_manager network_manager.cpp:133 my_ip=10.0.0.27
+2 Networker ERROR actor6 140384855193344 GLOBAL network_manager network_manager.cpp:134 my_port=3000
+2 Networker ERROR actor6 140384855193344 GLOBAL network_manager network_manager.cpp:135 tier=2
+3 Networker ERROR actor6 140384855193344 GLOBAL network_manager network_manager.cpp:136 am_first_root=0
+3 Networker ERROR actor6 140384855193344 GLOBAL network_manager network_manager.cpp:137 parent_ip=10.0.0.21
+3 Networker ERROR actor6 140384855193344 GLOBAL network_manager network_manager.cpp:138 parent_port=3000
+3 Logger ERROR actor10 140384629946112 rime logger logger.cpp:23 LOGGER STARTUP
+3 caf ERROR actor0 140384855219136 GLOBAL run_node main.cpp:77 Networker published
+3 Networker ERROR actor6 140384855193344 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+3 Tree ERROR actor13 140384855193344 GLOBAL operator() srt_node.cpp:99 initial attribute range = (37.732940,46.392567)
+3 Tree ERROR actor13 140384855193344 GLOBAL operator() srt_node.cpp:101 Initial subtree range: x=(37.732940,37.732940), y=(46.392567,46.392567)
+1003 Networker ERROR actor6 140384730593024 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+3114 Networker ERROR actor6 140384730593024 net_init)<GLOBAL operator() network_manager.cpp:217 CONNECTED
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017780388481783 RECEIVED MESSAGE: new_parent
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017780388806726 RECEIVED MESSAGE: subscribe
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017780389323916 RECEIVED MESSAGE: new_backup
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017780389366021 RECEIVED MESSAGE: subscribe
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017780391027939 RECEIVED MESSAGE
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017780391828989 RECEIVED MESSAGE
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017782025529861 RECEIVED MESSAGE: collect_tree from parent
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017782025635834 RECEIVED MESSAGE: collect_tree from child
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017782049859408 RECEIVED MESSAGE: new_parent
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017784985738225 RECEIVED MESSAGE: new_backup
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017784985823967 RECEIVED MESSAGE
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017784985866950 RECEIVED MESSAGE
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017784985908288 RECEIVED MESSAGE: subscribe
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017784985924524 RECEIVED MESSAGE: subscribe
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017784986918921 RECEIVED MESSAGE
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017784988172450 RECEIVED MESSAGE: new_backup
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017784988215468 RECEIVED MESSAGE: subscribe
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017785081558122 RECEIVED MESSAGE
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017785097258061 RECEIVED MESSAGE: new_backup
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017785097298864 RECEIVED MESSAGE: subscribe
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017797075584438 RECEIVED MESSAGE: collect_tree from parent
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017797075689047 RECEIVED MESSAGE: collect_tree from child
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017802528023583 ! RECEIVED QUERY
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017802528091744 ! QUERY DOES NOT APPLY TO SUBTREE
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017812089451777 RECEIVED MESSAGE: collect_tree from parent
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017812089541470 RECEIVED MESSAGE: collect_tree from child
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017827103973631 RECEIVED MESSAGE: collect_tree from parent
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:43 1617017827104038556 RECEIVED MESSAGE: collect_tree from child
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:46 1617017782025779784 CURRENT TREE
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:46 1617017782025779784------25
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:46 1617017797075817424 CURRENT TREE
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:46 1617017797075817424------25
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:46 1617017812089679141 CURRENT TREE
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:46 1617017812089679141------25
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:46 1617017827104261618 CURRENT TREE
+60003 Logger ERROR actor10 140384713807616 int)<GLOBAL operator() logger.cpp:46 1617017827104261618------25

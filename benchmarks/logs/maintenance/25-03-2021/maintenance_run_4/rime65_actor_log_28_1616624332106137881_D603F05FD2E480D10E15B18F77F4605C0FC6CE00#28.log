@@ -1,0 +1,35 @@
+3 caf ERROR actor0 140332193782720 GLOBAL run_node main.cpp:48 STARTUP TIME 1616624332109346884
+3 Networker ERROR actor6 140332193756928 GLOBAL network_manager network_manager.cpp:132 node_id=65
+3 Networker ERROR actor6 140332193756928 GLOBAL network_manager network_manager.cpp:133 my_ip=10.0.0.67
+3 Networker ERROR actor6 140332193756928 GLOBAL network_manager network_manager.cpp:134 my_port=3000
+3 Networker ERROR actor6 140332193756928 GLOBAL network_manager network_manager.cpp:135 tier=2
+3 Networker ERROR actor6 140332193756928 GLOBAL network_manager network_manager.cpp:136 am_first_root=0
+3 Networker ERROR actor6 140332193756928 GLOBAL network_manager network_manager.cpp:137 parent_ip=10.0.0.58
+3 Networker ERROR actor6 140332193756928 GLOBAL network_manager network_manager.cpp:138 parent_port=3000
+3 Logger ERROR actor10 140332193756928 rime logger logger.cpp:23 LOGGER STARTUP
+3 Networker ERROR actor6 140332185364224 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+3 caf ERROR actor0 140332193782720 GLOBAL run_node main.cpp:77 Networker published
+3 Tree ERROR actor13 140332075312896 GLOBAL operator() srt_node.cpp:99 initial attribute range = (1.148540,80.270150)
+3 Tree ERROR actor13 140332075312896 GLOBAL operator() srt_node.cpp:101 Initial subtree range: x=(1.148540,1.148540), y=(80.270150,80.270150)
+1003 Networker ERROR actor6 140332066920192 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+2463 Networker ERROR actor6 140332066920192 net_init)<GLOBAL operator() network_manager.cpp:217 CONNECTED
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624336120514841 RECEIVED MESSAGE: new_parent
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624336120748060 RECEIVED MESSAGE: new_backup
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624336120787320 RECEIVED MESSAGE: subscribe
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624336120814110 RECEIVED MESSAGE: subscribe
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624336122271476 RECEIVED MESSAGE
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624341141542620 RECEIVED MESSAGE
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624351686513623 RECEIVED MESSAGE: collect_tree from parent
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624351686627756 RECEIVED MESSAGE: collect_tree from child
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624351814164984 RECEIVED MESSAGE: new_parent
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624354872024823 RECEIVED MESSAGE: new_backup
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624354872147467 RECEIVED MESSAGE: subscribe
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624354872164055 RECEIVED MESSAGE: subscribe
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624360790733470 RECEIVED MESSAGE
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624360794867655 RECEIVED MESSAGE
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:43 1616624361052856466 RECEIVED MESSAGE
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:46 1616624351686916663 CURRENT TREE
+80003 Logger ERROR actor10 140331681052416 int)<GLOBAL operator() logger.cpp:46 1616624351686916663------65
+108131 caf ERROR actor0 140331630696192 caf.policy.tcp read_some tcp.cpp:53 recv failed: Connection reset by peer
+108132 Tree ERROR actor13 140332050134784 GLOBAL operator() srt_node.cpp:453 PARENT DOWN, old parent = 1, backup = 12
+108132 Networker ERROR actor6 140332050134784 net_init)<GLOBAL operator() network_manager.cpp:659 MESSAGE SENT: registration at parent 12

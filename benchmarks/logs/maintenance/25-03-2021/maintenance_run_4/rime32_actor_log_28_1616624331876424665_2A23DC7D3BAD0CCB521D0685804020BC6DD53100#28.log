@@ -1,0 +1,35 @@
+4 caf ERROR actor0 140669430983616 GLOBAL run_node main.cpp:48 STARTUP TIME 1616624331880935654
+4 Networker ERROR actor6 140669121173248 GLOBAL network_manager network_manager.cpp:132 node_id=32
+4 Networker ERROR actor6 140669121173248 GLOBAL network_manager network_manager.cpp:133 my_ip=10.0.0.34
+4 Networker ERROR actor6 140669121173248 GLOBAL network_manager network_manager.cpp:134 my_port=3000
+4 Networker ERROR actor6 140669121173248 GLOBAL network_manager network_manager.cpp:135 tier=2
+4 Networker ERROR actor6 140669121173248 GLOBAL network_manager network_manager.cpp:136 am_first_root=0
+4 Networker ERROR actor6 140669121173248 GLOBAL network_manager network_manager.cpp:137 parent_ip=10.0.0.25
+4 Networker ERROR actor6 140669121173248 GLOBAL network_manager network_manager.cpp:138 parent_port=3000
+5 Logger ERROR actor10 140669405779712 rime logger logger.cpp:23 LOGGER STARTUP
+5 Networker ERROR actor6 140669397387008 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+5 caf ERROR actor0 140669430983616 GLOBAL run_node main.cpp:77 Networker published
+5 Tree ERROR actor13 140669388994304 GLOBAL operator() srt_node.cpp:99 initial attribute range = (25.116967,94.329055)
+5 Tree ERROR actor13 140669388994304 GLOBAL operator() srt_node.cpp:101 Initial subtree range: x=(25.116967,25.116967), y=(94.329055,94.329055)
+1005 Networker ERROR actor6 140669163136768 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+3901 Networker ERROR actor6 140669163136768 net_init)<GLOBAL operator() network_manager.cpp:217 CONNECTED
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624337736432724 RECEIVED MESSAGE: new_parent
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624337737807404 RECEIVED MESSAGE: subscribe
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624337738135495 RECEIVED MESSAGE: new_backup
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624337738179137 RECEIVED MESSAGE: subscribe
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624337739513070 RECEIVED MESSAGE
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624337740164116 RECEIVED MESSAGE
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624351690900823 RECEIVED MESSAGE: collect_tree from parent
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624351691289266 RECEIVED MESSAGE: collect_tree from child
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624351822830653 RECEIVED MESSAGE: new_parent
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624354903874672 RECEIVED MESSAGE: new_backup
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624354903983839 RECEIVED MESSAGE: subscribe
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624354904000025 RECEIVED MESSAGE: subscribe
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624360791822977 RECEIVED MESSAGE
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624360794855957 RECEIVED MESSAGE
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:43 1616624361053166380 RECEIVED MESSAGE
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:46 1616624351691978748 CURRENT TREE
+80005 Logger ERROR actor10 140669121173248 int)<GLOBAL operator() logger.cpp:46 1616624351691978748------32
+108356 caf ERROR actor0 140668525586176 caf.policy.tcp read_some tcp.cpp:53 recv failed: Connection reset by peer
+108356 Tree ERROR actor13 140669163136768 GLOBAL operator() srt_node.cpp:453 PARENT DOWN, old parent = 1, backup = 12
+108356 Networker ERROR actor6 140669163136768 net_init)<GLOBAL operator() network_manager.cpp:659 MESSAGE SENT: registration at parent 12

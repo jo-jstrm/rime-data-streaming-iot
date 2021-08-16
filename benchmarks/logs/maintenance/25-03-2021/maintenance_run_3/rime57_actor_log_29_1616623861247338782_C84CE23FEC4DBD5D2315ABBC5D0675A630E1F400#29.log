@@ -1,0 +1,59 @@
+5 caf ERROR actor0 140167308909504 GLOBAL run_node main.cpp:48 STARTUP TIME 1616623861253177761
+6 Networker ERROR actor6 140167300491008 GLOBAL network_manager network_manager.cpp:132 node_id=57
+6 Networker ERROR actor6 140167300491008 GLOBAL network_manager network_manager.cpp:133 my_ip=10.0.0.59
+6 Networker ERROR actor6 140167300491008 GLOBAL network_manager network_manager.cpp:134 my_port=3000
+6 Networker ERROR actor6 140167300491008 GLOBAL network_manager network_manager.cpp:135 tier=2
+6 Networker ERROR actor6 140167300491008 GLOBAL network_manager network_manager.cpp:136 am_first_root=0
+6 Networker ERROR actor6 140167300491008 GLOBAL network_manager network_manager.cpp:137 parent_ip=10.0.0.58
+6 Networker ERROR actor6 140167300491008 GLOBAL network_manager network_manager.cpp:138 parent_port=3000
+6 caf ERROR actor0 140167308909504 GLOBAL run_node main.cpp:77 Networker published
+6 Logger ERROR actor10 140167283705600 rime logger logger.cpp:23 LOGGER STARTUP
+6 Networker ERROR actor6 140167283705600 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+6 Tree ERROR actor13 140167283705600 GLOBAL operator() srt_node.cpp:99 initial attribute range = (93.728698,28.006141)
+6 Tree ERROR actor13 140167283705600 GLOBAL operator() srt_node.cpp:101 Initial subtree range: x=(93.728698,93.728698), y=(28.006141,28.006141)
+1006 Networker ERROR actor6 140167046223616 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+2628 Networker ERROR actor6 140167046223616 net_init)<GLOBAL operator() network_manager.cpp:217 CONNECTED
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623865304301779 RECEIVED MESSAGE: new_parent
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623865304454989 RECEIVED MESSAGE: subscribe
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623865305105809 RECEIVED MESSAGE: new_backup
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623865305141760 RECEIVED MESSAGE: subscribe
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623865306079962 RECEIVED MESSAGE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623870332687165 RECEIVED MESSAGE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623880886805408 RECEIVED MESSAGE: collect_tree from parent
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623880890954771 RECEIVED MESSAGE: collect_tree from child
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623881089357336 RECEIVED MESSAGE: new_parent
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623889629234710 RECEIVED MESSAGE: new_backup
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623889629449314 RECEIVED MESSAGE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623889629466174 RECEIVED MESSAGE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623889629482019 RECEIVED MESSAGE: subscribe
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623889629496772 RECEIVED MESSAGE: subscribe
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623889630278725 RECEIVED MESSAGE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623889632594883 RECEIVED MESSAGE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623889633850591 RECEIVED MESSAGE: new_backup
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623889633884205 RECEIVED MESSAGE: subscribe
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623889636359859 RECEIVED MESSAGE: new_backup
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623889636397285 RECEIVED MESSAGE: subscribe
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623890193116344 RECEIVED MESSAGE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623890198782030 RECEIVED MESSAGE: new_backup
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623890198814164 RECEIVED MESSAGE: subscribe
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623896009597763 RECEIVED MESSAGE: collect_tree from parent
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623896009722569 RECEIVED MESSAGE: collect_tree from child
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623911014778913 RECEIVED MESSAGE: collect_tree from parent
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623911014869291 RECEIVED MESSAGE: collect_tree from child
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623926024846501 RECEIVED MESSAGE: collect_tree from parent
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623926024951387 RECEIVED MESSAGE: collect_tree from child
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623941035034323 RECEIVED MESSAGE: collect_tree from parent
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:43 1616623941035144325 RECEIVED MESSAGE: collect_tree from child
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:46 1616623880891187788 CURRENT TREE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:46 1616623880891187788------57
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:46 1616623896009864558 CURRENT TREE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:46 1616623896009864558------57
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:46 1616623911015157154 CURRENT TREE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:46 1616623911015157154------57
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:46 1616623926025117998 CURRENT TREE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:46 1616623926025117998------57
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:46 1616623941035388690 CURRENT TREE
+80006 Logger ERROR actor10 140167021045504 int)<GLOBAL operator() logger.cpp:46 1616623941035388690------57
+131193 caf ERROR actor0 140166609999616 caf.policy.tcp read_some tcp.cpp:53 recv failed: Connection reset by peer
+131193 Tree ERROR actor13 140167046223616 GLOBAL operator() srt_node.cpp:453 PARENT DOWN, old parent = 23, backup = 34
+131193 Networker ERROR actor6 140167046223616 net_init)<GLOBAL operator() network_manager.cpp:659 MESSAGE SENT: registration at parent 34

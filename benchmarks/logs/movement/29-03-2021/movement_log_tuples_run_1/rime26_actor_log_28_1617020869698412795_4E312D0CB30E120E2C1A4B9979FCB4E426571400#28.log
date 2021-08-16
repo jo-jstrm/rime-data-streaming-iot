@@ -1,0 +1,19 @@
+2 caf ERROR actor0 140530549078976 GLOBAL run_node main.cpp:48 STARTUP TIME 1617020869701192847
+2 Networker ERROR actor6 140530004498176 GLOBAL network_manager network_manager.cpp:132 node_id=26
+3 Networker ERROR actor6 140530004498176 GLOBAL network_manager network_manager.cpp:133 my_ip=10.0.0.28
+3 Networker ERROR actor6 140530004498176 GLOBAL network_manager network_manager.cpp:134 my_port=3000
+3 Networker ERROR actor6 140530004498176 GLOBAL network_manager network_manager.cpp:135 tier=2
+3 Networker ERROR actor6 140530004498176 GLOBAL network_manager network_manager.cpp:136 am_first_root=0
+3 Networker ERROR actor6 140530004498176 GLOBAL network_manager network_manager.cpp:137 parent_ip=10.0.0.21
+3 Networker ERROR actor6 140530004498176 GLOBAL network_manager network_manager.cpp:138 parent_port=3000
+3 Logger ERROR actor10 140530449114880 rime logger logger.cpp:23 LOGGER STARTUP
+3 Networker ERROR actor6 140530540660480 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+3 Tree ERROR actor13 140530012890880 GLOBAL operator() srt_node.cpp:99 initial attribute range = (21.471653,33.844548)
+3 caf ERROR actor0 140530549078976 GLOBAL run_node main.cpp:77 Networker published
+3 Tree ERROR actor13 140530012890880 GLOBAL operator() srt_node.cpp:101 Initial subtree range: x=(21.471653,21.471653), y=(33.844548,33.844548)
+1003 Networker ERROR actor6 140530415544064 net_init)<GLOBAL operator() network_manager.cpp:201 Try to connect
+3217 Networker ERROR actor6 140530415544064 net_init)<GLOBAL operator() network_manager.cpp:217 CONNECTED
+60003 Logger ERROR actor10 140530004498176 int)<GLOBAL operator() logger.cpp:43 1617020872917450442 RECEIVED MESSAGE: new_parent
+60003 Logger ERROR actor10 140530004498176 int)<GLOBAL operator() logger.cpp:43 1617020872917622500 RECEIVED MESSAGE: new_backup
+60003 Logger ERROR actor10 140530004498176 int)<GLOBAL operator() logger.cpp:43 1617020872917667877 RECEIVED MESSAGE: subscribe
+60003 Logger ERROR actor10 140530004498176 int)<GLOBAL operator() logger.cpp:43 1617020872917684416 RECEIVED MESSAGE: subscribe
